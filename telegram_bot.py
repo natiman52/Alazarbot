@@ -3,7 +3,7 @@ from telegram import Update, ChatMember
 from telegram.ext import ApplicationBuilder, CommandHandler, MessageHandler, filters, ContextTypes
 
 # Replace with your bot token
-TOKEN = '7948180625:AAESfaxsppVDHFgPVFH6ijksTCaIdRAZmV4'
+TOKEN = '7915998356:AAHOWLAlyQpqTh674Ug2zRyH65eV7MipAxw'
 
 # Your Telegram channel username (without @) 
 CHANNEL_USERNAME = "AstrogeezChannel"
