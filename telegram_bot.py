@@ -17,14 +17,14 @@ logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s
 async def is_subscribed(user_id: int, context: ContextTypes.DEFAULT_TYPE) -> bool:
     """Check if the user is a member of the channel."""
     try:
-        chat_member = await context.bot.get_chat_member(f"@{CHANNEL_USERNAME}", user_id)
+        chat_member = await context.bot.get_chat_member(f"@AstrogeezChannel", user_id)
 
         # Check if the user is a member, administrator, or owner of the channel
         if chat_member.status in ["member", "administrator", "creator"]:
-            logging.info(f"✅ User {user_id} is a member of {CHANNEL_USERNAME}.")
+            logging.info(f"✅ User {user_id} is a member of @AstrogeezChannel.")
             return True
         else:
-            logging.info(f"❌ User {user_id} is NOT a member of {CHANNEL_USERNAME}.")
+            logging.info(f"❌ User {user_id} is NOT a member of @AstrogeezChannel.")
             return False
     except Exception as e:
         logging.error(f"⚠ Error checking subscription status for user {user_id}: {e}")
@@ -40,7 +40,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
         )
     else:
         await update.message.reply_text(
-            f"እንኳን ደህና መጡ 🙌። ይህንን ቦት ለመጠቀም በቅድሚያ ቻናላችንን ይቀላቀሉ ዘንድ በትህትና እንጠይቃለን \n👉 [Join Here]({CHANNEL_LINK})\n"
+            f"እንኳን ደህና መጡ 🙌። ይህንን ቦት ለመጠቀም በቅድሚያ ቻናላችንን ይቀላቀሉ ዘንድ በትህትና እንጠይቃለን \n👉 [Join Here](https://t.me/AstrogeezChannel)\n"
             "",
             parse_mode="Markdown"
         )
@@ -55,7 +55,7 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE) -> 
         await update.message.reply_text(definition)
     else:
         await update.message.reply_text(
-            f"⚠ ይቅርታ! በቅድሚያ ቻናላችንን ይቀላቀሉ \n👉 [Join Here]({CHANNEL_LINK})\n"
+            f"⚠ ይቅርታ! በቅድሚያ ቻናላችንን ይቀላቀሉ \n👉 [Join Here](https://t.me/AstrogeezChannel)\n"
             "",
             parse_mode="Markdown"
         )
